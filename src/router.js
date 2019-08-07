@@ -10,11 +10,7 @@ export const defaultRoutes = [
     name: 'home',
     component: Home
   },
-  {
-    path: '*',
-    name: 'notFound',
-    component: () => import('./views/404.vue'),
-  },
+  
 ]
 //需要权限的路由
 export const authRoutes = [
@@ -49,10 +45,15 @@ export const authRoutes = [
     name: 'profile',
     component: () => import('./views/menu/profile.vue'),
   },
- 
+  {
+    path: '*',
+    name: 'notFound',
+    component: () => import('./views/404.vue'),
+  },
 ]
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: defaultRoutes
 })
+//注意 404 页面一定要放在异步路由的最后面，不可放在公共路由的后面，不然会导致刷新404的情况

@@ -10,7 +10,7 @@ Vue.config.productionTip = false
 
 //只要路由切换就会触发该钩子函数
 router.beforeEach(async (to, from, next) => {
-  console.log(store)
+  console.log(store.state.menuList)
   //当前用户是否获取过权限，如果获取了，就不再获取了
   if (!store.state.menuList.length) {
     await store.dispatch('getMenuList')//将菜单列表存放在state中

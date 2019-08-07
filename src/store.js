@@ -74,3 +74,4 @@ export default new Vuex.Store({
   },
  
 })
+//在使用vueX中 state中的属性只有去读的时候才会有值，如果只取不读的话 store.state.xxxx = undefined
