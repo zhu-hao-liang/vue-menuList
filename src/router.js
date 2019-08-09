@@ -10,7 +10,11 @@ export const defaultRoutes = [
     name: 'home',
     component: Home
   },
-  
+  {
+    path: '/scroll',
+    name: 'scroll',
+    component: () => import('./views/sync/parent')
+  },
 ]
 //需要权限的路由
 export const authRoutes = [
