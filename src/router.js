@@ -15,6 +15,12 @@ export const defaultRoutes = [
     name: 'scroll',
     component: () => import('./views/sync/parent')
   },
+  //测试render函数
+  {
+    path: '/list',
+    name: 'list',
+    component: () => import('./views/render/list')
+  },
 ]
 //需要权限的路由
 export const authRoutes = [
