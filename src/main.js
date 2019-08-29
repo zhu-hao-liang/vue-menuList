@@ -7,7 +7,12 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
-
+//404页面
+const notFound =  {
+  path: '*',
+  name: 'notFound',
+  component: () => import('./views/404.vue'),
+}
 //只要路由切换就会触发该钩子函数
 router.beforeEach(async (to, from, next) => {
   console.log(store.state.menuList, store.state.abc)
@@ -15,6 +20,7 @@ router.beforeEach(async (to, from, next) => {
   if (!store.state.menuList.length) {
     await store.dispatch('getMenuList')//将菜单列表存放在state中
     const neddRoutes = await store.dispatch('getAuthRoute')//获取需要的权限路由
+    neddRoutes.push(notFound)
     router.addRoutes(neddRoutes)
     next({ ...to, replace: true }) // hack方法 确保addRoutes完成后在跳转 replace: true,相当于history.replace(),
   } else {//如果已经获取过权限，直接放行

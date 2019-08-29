@@ -8,13 +8,19 @@ export default {
         }
     },
     render(h) {// createElement
+        const arr = [1,2,3]
         console.log(h);
-        const tag = 'h'+ this.title
+        // const tag = 'h'+ this.title
+        // return (
+        //     <tag>
+        //         {/* <slot></slot>使用插槽的话 就不能这么用 */}
+        //       {this.$slots.default}
+        //     </tag>
+        // )
         return (
-            <tag>
-                {/* <slot></slot>使用插槽的话 就不能这么用 */}
-              {this.$slots.default}
-            </tag>
+            <ul>
+                {arr.map((item) => <li>{item}</li>)}
+            </ul>
         )
     }
 }

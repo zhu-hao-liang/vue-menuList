@@ -7,6 +7,10 @@ Vue.use(Router)
 export const defaultRoutes = [
   {
     path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'home',
     component: Home
   },
@@ -21,6 +25,17 @@ export const defaultRoutes = [
     name: 'list',
     component: () => import('./views/render/list')
   },
+   //测试插槽组件
+   {
+    path: '/slot',
+    name: 'slot',
+    component: () => import('./views/slot/my-slot')
+  },
+  //  {
+  //   path: '*',
+  //   name: 'notFound',
+  //   component: () => import('./views/404.vue'),
+  // },
 ]
 //需要权限的路由
 export const authRoutes = [
@@ -55,11 +70,7 @@ export const authRoutes = [
     name: 'profile',
     component: () => import('./views/menu/profile.vue'),
   },
-  {
-    path: '*',
-    name: 'notFound',
-    component: () => import('./views/404.vue'),
-  },
+ 
 ]
 export default new Router({
   mode: 'history',

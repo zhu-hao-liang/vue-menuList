@@ -45,7 +45,11 @@ export default new Vuex.Store({
   state: {
     menuList: [],
     authList: [], //对应的权限列表
-    abc: ''
+    abc: '',
+    btnPermission: { // 按钮权限
+      edit: false,
+      add: true
+    }
   },
   getters: {
 
@@ -61,31 +65,21 @@ export default new Vuex.Store({
     TEST(state, {
       data
     }) {
-      console.log('TEST', state.abc)
+      //console.log('TEST', state.abc)
       state.abc = data
     }
   },
   actions: {
-    async getMenuList({
-      commit
-    }) {
-      const {
-        data
-      } = await axios.get('/api/menuList')
-      const {
-        menuList,
-        authArr
-      } = formatMenuList(data.menuList)
+    async getMenuList({ commit }) {
+      const { data } = await axios.get('/api/menuList')
+      const { menuList, authArr } = formatMenuList(data.menuList)
       console.log('menuList', menuList);
       commit('updateMenuList', {
         menuList,
         authArr
       })
     },
-    async getAuthRoute({
-      commit,
-      state
-    }) {
+    async getAuthRoute({commit,state}) {
       //将所有的权限路由与权限列表作比较,根据权限列表筛选出应该显示的权限路由
       const needRoutes = getNeedRoutes(state.authList)
       console.log('needRoutes', needRoutes)
