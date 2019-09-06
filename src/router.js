@@ -31,6 +31,12 @@ export const defaultRoutes = [
     name: 'slot',
     component: () => import('./views/slot/my-slot')
   },
+   //测试轮播图组件
+   {
+    path: '/swiper',
+    name: 'swiper',
+    component: () => import('./views/swiper/swiper')
+  },
   //  {
   //   path: '*',
   //   name: 'notFound',
