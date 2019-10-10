@@ -5,6 +5,7 @@ import store from './store'
 //引入element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import './css/index.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 //404页面
@@ -15,6 +16,8 @@ const notFound =  {
 }
 //只要路由切换就会触发该钩子函数
 router.beforeEach(async (to, from, next) => {
+  console.log('123');
+  debugger
   console.log(store.state.menuList, store.state.abc)
   //当前用户是否获取过权限，如果获取了，就不再获取了
   if (!store.state.menuList.length) {

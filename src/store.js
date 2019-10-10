@@ -79,7 +79,7 @@ export default new Vuex.Store({
         authArr
       })
     },
-    async getAuthRoute({commit,state}) {
+    async getAuthRoute({ commit, state }) {
       //将所有的权限路由与权限列表作比较,根据权限列表筛选出应该显示的权限路由
       const needRoutes = getNeedRoutes(state.authList)
       console.log('needRoutes', needRoutes)

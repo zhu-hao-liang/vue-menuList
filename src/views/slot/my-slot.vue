@@ -1,7 +1,11 @@
 <template>
     <div>
         <p>父组件</p>
-        <Child :data='data'>
+        <Child :data='data' style="width: auto; height:auto; border: 1px solid red">
+            <h1>1</h1>
+
+
+            
             <!-- v-slot:header具名插槽 -->
             <template v-slot:header>
                 <span>朱豪亮</span>

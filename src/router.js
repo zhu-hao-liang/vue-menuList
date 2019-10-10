@@ -37,6 +37,12 @@ export const defaultRoutes = [
     name: 'swiper',
     component: () => import('./views/swiper/swiper')
   },
+  //tab栏切换
+  {
+    path: '/tab',
+    name: 'tab',
+    component: () => import('./views/tab/index')
+  },
   //  {
   //   path: '*',
   //   name: 'notFound',
