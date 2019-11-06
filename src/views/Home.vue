@@ -18,6 +18,7 @@
       <input type="text">
     </div>
     <button @click="toggle">测试key</button>
+     <AA/>
   </div>
 </template>
 <script>
@@ -69,7 +70,7 @@ export default {
     }
   },
   components: {
-    MenuTree
+    MenuTree,
   }
 };
 </script>

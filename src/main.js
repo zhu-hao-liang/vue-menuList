@@ -17,7 +17,7 @@ const notFound =  {
 //只要路由切换就会触发该钩子函数
 router.beforeEach(async (to, from, next) => {
   console.log('123');
-  debugger
+  //debugger
   console.log(store.state.menuList, store.state.abc)
   //当前用户是否获取过权限，如果获取了，就不再获取了
   if (!store.state.menuList.length) {
