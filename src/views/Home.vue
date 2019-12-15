@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <button @click="test">测试</button>
     <span>{{abc}}</span>
     <span>{{ABC}}</span>
@@ -9,16 +9,16 @@
       <MenuTree :menuList="menuList" />
     </el-menu>
     <!-- 用来测试key的必要性 -->
-    <div class="show" v-if="visibility" key='1'>
+    <div class="show" v-if="visibility">
       <span>显示</span>
       <input type="text">
     </div>
-    <div class="show" v-else key='2'>
+    <div class="show" v-else>
       <span>隐藏key</span>
       <input type="text">
     </div>
     <button @click="toggle">测试key</button>
-     <AA/>
+
   </div>
 </template>
 <script>
@@ -69,8 +69,15 @@ export default {
       this.visibility = !this.visibility
     }
   },
-  components: {
+  components: { 
     MenuTree,
+  },
+  render(h) {
+    debugger
+         return (<div>1</div>)
   }
 };
 </script>
+<style scoped>
+</style>
+ 

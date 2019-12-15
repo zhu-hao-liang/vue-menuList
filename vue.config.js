@@ -7,6 +7,7 @@ const menuList = [
     {pid: -1, path: '/profile', name: '个人中心', id: 3, auth: 'profile'},
 ]
 module.exports = {
+    // publicPath: '/general/customer',
     devServer: {
         open: true, //浏览器自动打开页面
         //     proxy: {

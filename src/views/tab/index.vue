@@ -16,6 +16,8 @@
 <<script>
 import tab1 from './tab1.vue'
 import tab2 from './tab2.vue'
+import tab3 from './tab3.vue'
+import tab4 from './tab4.vue'
 export default {
   name: 'app',
   data(){
@@ -30,6 +32,14 @@ export default {
         {
           type:'tab2',
           view:'tab2'
+        },
+        {
+          type:'tab3',
+          view:'tab3'
+        },
+         {
+          type:'tab4',
+          view:'tab4'
         }
       ]
     }
@@ -42,7 +52,9 @@ export default {
   },
   components:{
     tab1,
-    tab2
+    tab2,
+    tab3,
+    tab4
   }
 }
 </script>

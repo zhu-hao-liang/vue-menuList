@@ -1,0 +1,31 @@
+
+.customLoading{
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,.8);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.customLoading i{
+    color: rgb(32, 160, 255);
+    font-size: 30px;
+  }
+/*旋转加载条*/
+.refleash{
+  animation: refleashRotate 1s linear infinite;
+}
+
+@keyframes refleashRotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

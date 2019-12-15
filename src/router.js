@@ -25,14 +25,14 @@ export const defaultRoutes = [
     name: 'list',
     component: () => import('./views/render/list')
   },
-   //测试插槽组件
-   {
+  //测试插槽组件
+  {
     path: '/slot',
     name: 'slot',
     component: () => import('./views/slot/my-slot')
   },
-   //测试轮播图组件
-   {
+  //测试轮播图组件
+  {
     path: '/swiper',
     name: 'swiper',
     component: () => import('./views/swiper/swiper')
@@ -42,6 +42,17 @@ export const defaultRoutes = [
     path: '/tab',
     name: 'tab',
     component: () => import('./views/tab/index')
+  },
+  // 可编辑的文件夹树
+  {
+    path: '/editTree',
+    name: 'editTree',
+    component: () => import('./views/editTree/index')
+  },
+  {
+    path: '/touch',
+    name: 'touch',
+    component: () => import('./views/touch/index')
   },
   //  {
   //   path: '*',
@@ -60,15 +71,15 @@ export const authRoutes = [
       name: 'cart-list',
       component: () => import('./views/menu/cart-list.vue'),
       children: [{
-          path: 'lottery',
-          name: 'lottery',
-          component: () => import('./views/menu/lottery.vue'),
-        },
-        {
-          path: 'product',
-          name: 'product',
-          component: () => import('./views/menu/product.vue'),
-        },
+        path: 'lottery',
+        name: 'lottery',
+        component: () => import('./views/menu/lottery.vue'),
+      },
+      {
+        path: 'product',
+        name: 'product',
+        component: () => import('./views/menu/product.vue'),
+      },
       ]
     }]
   },
@@ -82,7 +93,7 @@ export const authRoutes = [
     name: 'profile',
     component: () => import('./views/menu/profile.vue'),
   },
- 
+
 ]
 export default new Router({
   mode: 'history',

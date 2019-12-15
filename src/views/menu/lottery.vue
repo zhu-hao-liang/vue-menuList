@@ -1,3 +1,3 @@
 <template>
-    <div>lottery</div>
+    <div v-customLoading="true">lottery</div>
 </template>
